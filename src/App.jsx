@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Pages from './Pages/Pages';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [loading, setLoading] = useState(true);

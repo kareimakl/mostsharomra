@@ -6,3 +6,67 @@ body {
   font-optical-sizing: auto;
   direction: rtl;
 }
+.payment-method {
+  direction: rtl;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+/* .payment-options label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: default;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+} */
+
+.payment-options input[type="radio"] {
+  accent-color: #4CAF50;
+}
+
+.other-payment {
+  font-size: 16px;
+  color: #555;
+}
+
+.other-payment span {
+  font-weight: bold;
+  margin-right: 8px;
+  color: #000;
+}
+
+@media print {
+  .sidebar {
+    display: none !important;
+  }
+}
+
+@media print {
+  .sidebar,
+  .header,
+  .footer,
+  .no-print {
+    display: none !important;
+  }
+}

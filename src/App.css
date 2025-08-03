@@ -1,26 +1,27 @@
-:root{
-  --main-color :#b3261e ; /*  #1d84eb */
-  --text-light-color : #96999f  ;  
-  --background-color: #f9fafb ;
-  --yellow-color : #faeb73 ;
-  --pink-color :#e2b7e0 ;
-  --blue-color : #e9f6f5 ;
-  --active-color :#b3261e ;
-  --sub-active-color : black ;
+:root {
+  --main-color: #b3261e; /*  #1d84eb */
+  --text-light-color: #96999f;
+  --background-color: #f9fafb;
+  --yellow-color: #faeb73;
+  --pink-color: #e2b7e0;
+  --blue-color: #e9f6f5;
+  --active-color: #b3261e;
+  --sub-active-color: black;
 }
 
-body{
+body {
   background-color: #ececec;
-  margin: 0; 
+  margin: 0;
+  overflow: auto !important;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-li{
+li {
   list-style: none;
 }
 
@@ -29,8 +30,7 @@ table th {
   padding: 10px !important;
 }
 
-
-.main-btn{
+.main-btn {
   background-color: var(--main-color);
   color: white;
   padding: 7px 10px;
@@ -39,10 +39,10 @@ table th {
   transition: 0.3s;
   border: none;
   outline: none;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
-.main-btn:hover{
+.main-btn:hover {
   background-color: white;
   color: var(--main-color);
   border: 1px solid var(--main-color);
@@ -51,13 +51,19 @@ table th {
 
 /* HTML: <div class="loader"></div> */
 .loader {
-  --c1:#673b14;
-  --c2:#f8b13b;
+  --c1: #673b14;
+  --c2: #f8b13b;
   width: 40px;
   height: 80px;
   border-top: 4px solid var(--c1);
   border-bottom: 4px solid var(--c1);
-  background: linear-gradient(90deg, var(--c1) 2px, var(--c2) 0 5px,var(--c1) 0) 50%/7px 8px no-repeat;
+  background: linear-gradient(
+      90deg,
+      var(--c1) 2px,
+      var(--c2) 0 5px,
+      var(--c1) 0
+    )
+    50%/7px 8px no-repeat;
   display: grid;
   overflow: hidden;
   animation: l5-0 2s infinite linear;
@@ -73,13 +79,12 @@ table th {
   border-top: 0;
   box-sizing: content-box;
   border-radius: 0 0 40% 40%;
-  -webkit-mask: 
-    linear-gradient(#000 0 0) bottom/4px 2px no-repeat,
+  -webkit-mask: linear-gradient(#000 0 0) bottom/4px 2px no-repeat,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: destination-out;
-          mask-composite: exclude;
-  background: 
-    linear-gradient(var(--d,0deg),var(--c2) 50%,#0000 0) bottom /100% 205%,
+  mask-composite: exclude;
+  background: linear-gradient(var(--d, 0deg), var(--c2) 50%, #0000 0) bottom /
+      100% 205%,
     linear-gradient(var(--c2) 0 0) center/0 100%;
   background-repeat: no-repeat;
   animation: inherit;
@@ -88,19 +93,27 @@ table th {
 .loader::after {
   transform-origin: 50% calc(100% + 2px);
   transform: scaleY(-1);
-  --s:3px;
-  --d:180deg;
+  --s: 3px;
+  --d: 180deg;
 }
 @keyframes l5-0 {
-  80%  {transform: rotate(0)}
-  100% {transform: rotate(0.5turn)}
+  80% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0.5turn);
+  }
 }
 @keyframes l5-1 {
-  10%,70%  {background-size:100% 205%,var(--s,0) 100%}
-  70%,100% {background-position: top,center}
+  10%,
+  70% {
+    background-size: 100% 205%, var(--s, 0) 100%;
+  }
+  70%,
+  100% {
+    background-position: top, center;
+  }
 }
-
-
 
 /* HTML: <div class="loader"></div> */
 .main-loader {
@@ -109,15 +122,12 @@ table th {
   display: grid;
 }
 .main-loader::before,
-.main-loader::after {    
-  content:"";
+.main-loader::after {
+  content: "";
   grid-area: 1/1;
-  --c:no-repeat radial-gradient(farthest-side,#25b09b 92%,#0000);
-  background: 
-    var(--c) 50%  0, 
-    var(--c) 50%  100%, 
-    var(--c) 100% 50%, 
-    var(--c) 0    50%;
+  --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
   background-size: 12px 12px;
   animation: l12 1s infinite;
 }
@@ -125,11 +135,13 @@ table th {
   margin: 4px;
   filter: hue-rotate(45deg);
   background-size: 8px 8px;
-  animation-timing-function: linear
+  animation-timing-function: linear;
 }
 
-@keyframes l12 { 
-  100%{transform: rotate(.5turn)}
+@keyframes l12 {
+  100% {
+    transform: rotate(0.5turn);
+  }
 }
 
 /* Centering the loader */
@@ -145,28 +157,26 @@ table th {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
 }
 
- table { 
+table {
   border-collapse: collapse;
   text-align: center;
 }
 
-
 /* Smooth Sidebar Transition */
-@media screen and (max-width:800px) {
-  
+@media screen and (max-width: 800px) {
   #sidebar {
     display: none;
     position: absolute;
     right: 0;
     top: 70px;
     height: 100%;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
   }
-  
+
   .sidebar-icon-only #sidebar {
-    display: block ;
+    display: block;
   }
 }
