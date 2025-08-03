@@ -41,7 +41,7 @@ const Login = () => {
           <form className="form" onSubmit={handleSubmit}>
             <div className="d-flex justify-content-center">
               <img
-                src="../assets/images/apple-icon.png"
+                src="/logo.jfif"
                 alt="logo"
                 style={{ width: "230px" }}
               />

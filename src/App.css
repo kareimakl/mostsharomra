@@ -1,11 +1,11 @@
 :root {
-  --main-color: #b3261e; /*  #1d84eb */
+  --main-color: hsl(207.3deg 91.74% 42.75%); /*  #1d84eb */
   --text-light-color: #96999f;
   --background-color: #f9fafb;
   --yellow-color: #faeb73;
   --pink-color: #e2b7e0;
   --blue-color: #e9f6f5;
-  --active-color: #b3261e;
+  --active-color: hsl(207.3deg 91.74% 42.75%);
   --sub-active-color: black;
 }
 
