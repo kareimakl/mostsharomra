@@ -16,7 +16,7 @@ const PrintPage = () => {
         const qrRes = await axios.post(
           "https://crm-fatora.onrender.com/api/generate-qr",
           {
-            url: `http://localhost:3001/admin/print/${invoiceId}`,
+            url: `https://mostsharomra.vercel.app/admin/print/${invoiceId}`,
           }
         );
 
