@@ -5,6 +5,7 @@ import Protected from "../Components/Common/Protected";
 import ProtectedRoute from "../Components/protectedRoute/ProtectedRoute";
 import Print from "./Dashboard Pages/Print";
 import AddInvioce from "./Dashboard Pages/add-invioce";
+import AdTrip from "./Dashboard Pages/Add-Trip";
 import Header from "../Components/Admin Components/header/Header";
 import SideNav from "../Components/Admin Components/sideNav/SideNav";
 import InvoicesList from "./Dashboard Pages/all-invoice";
@@ -39,6 +40,14 @@ const Pages = () => {
                         element={
                           <ProtectedRoute>
                             <AddInvioce setInvoiceData={setInvoiceData} />
+                          </ProtectedRoute>
+                        }
+                      />
+                      <Route
+                        path="/admin/add-trip"
+                        element={
+                          <ProtectedRoute>
+                            <AdTrip setInvoiceData={setInvoiceData} />
                           </ProtectedRoute>
                         }
                       />

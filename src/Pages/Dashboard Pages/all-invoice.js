@@ -13,9 +13,17 @@ const InvoicesList = () => {
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
+        const token = localStorage.getItem("token");
+
         const response = await axios.get(
-          "https://crm-fatora.onrender.com/api/invoices"
+          "https://crm-fatora.onrender.com/api/invoices",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
+
         setInvoices(response.data);
         setFilteredInvoices(response.data);
         setLoading(false);

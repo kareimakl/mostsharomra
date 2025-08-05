@@ -53,12 +53,17 @@ const SideNav = ({ isSidebarOpen }) => {
               <ul className="nav flex-column sub-menu">
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/admin/invoices">
-                  كل الفواتير
+                    كل الفواتير
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/admin/add-invoice">
-                  اضافة فاتورة
+                    اضافة فاتورة
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/admin/add-trip">
+                    اضافة رحلة
                   </NavLink>
                 </li>
               </ul>

@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Define the base URL of your Laravel API
-const baseUrl = "https://xealkhalej-backend.alwajez.com/api/user";
+const baseUrl = "https://crm-fatora.onrender.com";
 
 export const messageApi = createApi({
   reducerPath: "messageApi",

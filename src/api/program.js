@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const baseUrl = "https://xealkhalej-backend.alwajez.com/api/";
+const baseUrl = "https://crm-fatora.onrender.com/api";
 
-export const faqApi = createApi({
-  reducerPath: "faqApi",
+export const program = createApi({
+  reducerPath: "program",
   baseQuery: fetchBaseQuery({
     baseUrl,
     prepareHeaders: (headers) => {
@@ -18,18 +18,18 @@ export const faqApi = createApi({
   endpoints: (builder) => ({
     // Fetch all faqs (GET)
     getFaqs: builder.query({
-      query: () => "/faqs",
+      query: () => "/programs",
     }),
 
     // Get a single faq by ID (GET)
     getFaqById: builder.query({
-      query: (id) => `/show-faq/${id}`,
+      query: (id) => `/programs/${id}`,
     }),
 
     // Create a new faq (POST)
     createFaq: builder.mutation({
       query: (newFaq) => ({
-        url: "/add-faq",
+        url: "/programs",
         method: "POST",
         body: newFaq,
       }),
@@ -38,7 +38,7 @@ export const faqApi = createApi({
     // Update an existing faq (PUT)
     updateFaq: builder.mutation({
       query: ({ id, updatedFaq }) => ({
-        url: `/update-faq/${id}`,
+        url: `/programs/${id}`,
         method: "PUT",
         body: updatedFaq,
       }),
@@ -47,7 +47,7 @@ export const faqApi = createApi({
     // Delete a faq (DELETE)
     deleteFaq: builder.mutation({
       query: (id) => ({
-        url: `/delete-faq/${id}`,
+        url: `/programs/${id}`,
         method: "DELETE",
       }),
     }),
@@ -61,4 +61,4 @@ export const {
   useCreateFaqMutation,
   useUpdateFaqMutation,
   useDeleteFaqMutation,
-} = faqApi;
+} = program;

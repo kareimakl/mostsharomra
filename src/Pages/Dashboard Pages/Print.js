@@ -14,9 +14,14 @@ const PrintPage = () => {
       try {
         // Step 1: Generate QR code
         const qrRes = await axios.post(
-          "https://crm-fatora.onrender.com/api/generate-qr",
+          "https://crm-fatora.onrender.com/api/invoices/generate-qr",
           {
             url: `https://mostsharomra.vercel.app/admin/print/${invoiceId}`,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
           }
         );
 
@@ -24,7 +29,12 @@ const PrintPage = () => {
 
         // Step 2: Fetch invoice data
         const invoiceRes = await axios.get(
-          `https://crm-fatora.onrender.com/api/invoices/${invoiceId}`
+          `https://crm-fatora.onrender.com/api/invoices/${invoiceId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
         );
         setInvoiceData(invoiceRes.data);
       } catch (err) {

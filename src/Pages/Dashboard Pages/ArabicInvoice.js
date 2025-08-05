@@ -414,14 +414,7 @@ export default function ArabicInvoice({ invoiceData, qrImageTag }) {
             <h2>تفاصيل الرحلة</h2>
             <h3>Trip Details</h3>
             <p>
-              رحلة ٤ يوم مكة والمدينة يوم الاحد
-              <br />
-              - التحرك من المكتب ٣ العصر الأحد
-              <br />
-              - الوصول مكة صباح الإثنين
-              <br />
-              - التحرك للمدينة مساء الثلاثاء
-              <br />- العودة للدمام الخميس فجراً
+              {invoiceData?.program?.description || "تفاصيل الرحلة غير متوفرة"}
             </p>
           </div>
 
@@ -479,45 +472,12 @@ export default function ArabicInvoice({ invoiceData, qrImageTag }) {
           </div>
 
           {/* Programs */}
-          <div className="programs-section border rounded p-4 my-4">
-            <h3 className="text-xs">البرامج المختارة:</h3>
+          <div className="programs-section text-end border rounded p-1  ">
+            <h3 className="text-xs" style={{ fontSize: "15px" }}>
+              البرامج المختارة:
+            </h3>
             <ul className="list-disc pl-6 text-xs">
-              {invoiceData?.program3DayMakkahMadinah && (
-                <li>
-                  ✅ برنامج ٣ يوم مكة والمدينة{" "}
-                  <span className="text-gray-500 ml-2">
-                    / 3Day Makkah & Madinah
-                  </span>
-                </li>
-              )}
-              {invoiceData?.program4DayMakkahMadinah && (
-                <li>
-                  ✅ برنامج ٤ يوم مكة والمدينة{" "}
-                  <span className="text-gray-500 ml-2">
-                    / 4Day Makkah & Madinah
-                  </span>
-                </li>
-              )}
-              {invoiceData?.program3DayMakkah && (
-                <li>
-                  ✅ برنامج ٣ يوم مكة فقط{" "}
-                  <span className="text-gray-500 ml-2">/ 3Day Makkah Only</span>
-                </li>
-              )}
-              {invoiceData?.programOneWayMakkah && (
-                <li>
-                  ✅ برنامج ذهاب مكة فقط{" "}
-                  <span className="text-gray-500 ml-2">
-                    / One-Way to Makkah
-                  </span>
-                </li>
-              )}
-              {invoiceData?.programReturnDammam && (
-                <li>
-                  ✅ برنامج عودة الدمام فقط{" "}
-                  <span className="text-gray-500 ml-2">/ Return to Dammam</span>
-                </li>
-              )}
+              {invoiceData?.program.title}
             </ul>
           </div>
 
